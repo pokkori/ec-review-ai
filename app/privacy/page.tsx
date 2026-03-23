@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           <div><h2 className="font-bold text-gray-900 mb-2">6. アクセス解析</h2><p>本サービスでは、Vercel Analyticsを使用してアクセス状況を分析しています。個人を特定する情報は収集しません。</p></div>
           <div><h2 className="font-bold text-gray-900 mb-2">7. 免責事項</h2><p>本サービスが生成するコンテンツはAIによる自動生成であり、情報提供を目的としています。生成内容の正確性・適切性を保証するものではありません。実際の返信文の使用については、必ずご自身で内容をご確認ください。</p></div>
           <div><h2 className="font-bold text-gray-900 mb-2">8. ポリシーの変更</h2><p>本ポリシーは予告なく変更する場合があります。変更後は本ページに掲載した時点で効力を生じます。</p></div>
-          <div><h2 className="font-bold text-gray-900 mb-2">9. お問い合わせ</h2><p>本ポリシーに関するご質問は levonadesign@gmail.com までご連絡ください。</p></div>
+          <div><h2 className="font-bold text-gray-900 mb-2">9. お問い合わせ</h2><p>本ポリシーに関するご質問は X(Twitter) @levona_design へのDM までご連絡ください。</p></div>
         </section>
       </article>
     </main>
