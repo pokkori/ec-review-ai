@@ -84,8 +84,7 @@ export async function POST(req: NextRequest) {
     "主な要求: （返品希望/情報提供要求/謝罪要求/改善要求/なし など）",
     "リスクレベル: （高/中/低）",
     "リスク理由: （SNS拡散の可能性・悪意の有無・要求の妥当性など）",
-  ].join("
-");
+  ].join("\n");
   try {
     const message = await client.messages.create({
       model: "claude-haiku-4-5-20251001",
