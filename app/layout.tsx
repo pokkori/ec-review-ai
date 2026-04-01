@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import OrbBackground from "@/components/OrbBackground";
 import "./globals.css";
 
 
@@ -30,7 +31,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ja">
       <body className="antialiased">
-        {children}
+        <OrbBackground />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>
