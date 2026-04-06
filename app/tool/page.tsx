@@ -38,7 +38,13 @@ function Paywall({ onClose, onCheckout }: { onClose: () => void; onCheckout?: (p
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
       <div className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-xl text-center">
-        <div className="text-3xl mb-3">📦</div>
+        <div className="mb-3 flex justify-center">
+          <svg className="w-10 h-10 text-orange-500" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect x="4" y="14" width="32" height="22" rx="3" fill="#f97316" opacity="0.15" stroke="#f97316" strokeWidth="2"/>
+            <path d="M4 18h32M14 18V36M26 18V36" stroke="#f97316" strokeWidth="1.5"/>
+            <path d="M12 14V10a8 8 0 0116 0v4" stroke="#f97316" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </div>
         <h2 className="text-lg font-bold mb-2">無料枠を使い切りました</h2>
         <p className="text-sm text-gray-500 mb-1">プロのECセラー向け返信文を無制限に生成</p>
         <ul className="text-xs text-gray-400 text-left mb-5 space-y-1 mt-3">
@@ -252,7 +258,7 @@ export default function ReviewTool() {
                 <div className="text-center">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto mb-3" />
                   <p className="text-sm text-gray-500 font-medium">AIが返信文を生成中...</p>
-                  <p className="text-xs text-gray-400 mt-2">✍ 返信文 → 💡 改善提案 → 🧠 感情分析</p>
+                  <p className="text-xs text-gray-400 mt-2">返信文 → 改善提案 → 感情分析</p>
                   <p className="text-xs text-gray-300 mt-1">通常15〜20秒かかります</p>
                 </div>
               </div>
@@ -260,13 +266,17 @@ export default function ReviewTool() {
               <ResultTabs parsed={parsed} />
             ) : (
               <div className="flex-1 bg-white border border-gray-200 rounded-xl flex flex-col items-center justify-center min-h-[420px] text-gray-400 gap-3">
-                <div className="text-4xl">📦</div>
+                <svg className="w-12 h-12 text-gray-300" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                  <rect x="6" y="16" width="36" height="26" rx="3" fill="currentColor" opacity="0.2" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M6 22h36M18 22V42M30 22V42" stroke="currentColor" strokeWidth="1.5"/>
+                  <path d="M14 16V12a10 10 0 0120 0v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
                 <p className="text-sm text-center font-medium text-gray-500">レビューを入力して<br />生成ボタンを押してください</p>
                 <div className="bg-gray-50 rounded-lg p-4 text-xs space-y-2 w-full max-w-[260px]">
                   <p className="font-semibold text-gray-600">生成される内容：</p>
-                  <p className="text-gray-500">✍ 返信文（そのままコピペ可）</p>
-                  <p className="text-gray-500">💡 商品・サービス改善提案（3点）</p>
-                  <p className="text-gray-500">🧠 感情分析・リスク判定</p>
+                  <p className="text-gray-500">返信文（そのままコピペ可）</p>
+                  <p className="text-gray-500">商品・サービス改善提案（3点）</p>
+                  <p className="text-gray-500">感情分析・リスク判定</p>
                 </div>
               </div>
             )}
