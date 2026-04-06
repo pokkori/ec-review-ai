@@ -16,9 +16,9 @@ type HistoryItem = { date: string; platform: string; rating: string; result: str
 
 function parseResult(text: string): ParsedResult {
   const defs = [
-    { key: "===返信文===", icon: "✍", title: "返信文" },
-    { key: "===改善提案===", icon: "💡", title: "改善提案" },
-    { key: "===感情分析===", icon: "🧠", title: "感情分析" },
+    { key: "===返信文===", icon: "", title: "返信文" },
+    { key: "===改善提案===", icon: "", title: "改善提案" },
+    { key: "===感情分析===", icon: "", title: "感情分析" },
   ];
   const sections: Section[] = [];
   for (let i = 0; i < defs.length; i++) {
@@ -30,7 +30,7 @@ function parseResult(text: string): ParsedResult {
     const content = text.slice(start + def.key.length, end !== -1 ? end : text.length).trim();
     sections.push({ title: def.title, icon: def.icon, content });
   }
-  if (sections.length === 0) sections.push({ title: "生成結果", icon: "📄", content: text });
+  if (sections.length === 0) sections.push({ title: "生成結果", icon: "", content: text });
   return { sections, raw: text };
 }
 
@@ -48,9 +48,9 @@ function Paywall({ onClose, onCheckout }: { onClose: () => void; onCheckout?: (p
         <h2 className="text-lg font-bold mb-2">無料枠を使い切りました</h2>
         <p className="text-sm text-gray-500 mb-1">プロのECセラー向け返信文を無制限に生成</p>
         <ul className="text-xs text-gray-400 text-left mb-5 space-y-1 mt-3">
-          <li>✓ 返信文・感情分析・改善提案を無制限生成</li>
-          <li>✓ Amazon/楽天/メルカリ/Yahoo!対応</li>
-          <li>✓ 履歴保存</li>
+          <li>返信文・感情分析・改善提案を無制限生成</li>
+          <li>Amazon/楽天/メルカリ/Yahoo!対応</li>
+          <li>履歴保存</li>
         </ul>
         <div className="space-y-3 mb-4">
           <button onClick={() => { onClose(); onCheckout?.("standard"); }} className="block w-full bg-orange-500 text-white font-bold py-3 rounded-xl hover:bg-orange-600">
@@ -75,7 +75,7 @@ function CopyButton({ text, label = "コピー" }: { text: string; label?: strin
   };
   return (
     <button onClick={handleCopy} className="text-xs px-3 py-1 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium transition-colors">
-      {copied ? "コピー済み ✓" : label}
+      {copied ? "コピー済み" : label}
     </button>
   );
 }
